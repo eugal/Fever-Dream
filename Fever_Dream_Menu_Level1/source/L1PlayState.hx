@@ -14,6 +14,7 @@ class L1PlayState extends FlxState {
 	public var exits:FlxGroup;
 	public var enemies:FlxGroup;
 	public var powerUps:FlxGroup;
+	public var platforms:FlxGroup;
 	private var level:L1TiledLevel;
 	private var bgImage:FlxSprite;
 	private var healthBar:L1HealthBar;
@@ -36,6 +37,9 @@ class L1PlayState extends FlxState {
 		enemies = new FlxGroup();
 		add(enemies);
 
+		platforms = new FlxGroup();
+		add(platforms);
+
 		// load objects based on tiled layout
 		level.loadObjects(this);
 
@@ -51,6 +55,7 @@ class L1PlayState extends FlxState {
 		FlxG.overlap(p1, exits, exitLevel);
 		FlxG.overlap(p1, powerUps, powerUp);
 		FlxG.collide(p1, enemies, hitEnemy);
+		FlxG.collide(p1, platforms);
 	}	
 
 	public function exitLevel(p:L1Player, e:L1Exit):Void {

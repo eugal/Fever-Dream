@@ -87,6 +87,8 @@ class L1TiledLevel extends TiledMap {
 		// get the location of the object from tiled. variables created here are "local" to this function and not shared. think: internal use only.
 		var x:Int = o.x;
 		var y:Int = o.y;
+		var width:Int = o.width;
+		var height:Int = o.height;
 		
 		// objects in tiled are aligned bottom-left (top-left in flixel)
 		if (o.gid != -1) {
@@ -112,6 +114,14 @@ class L1TiledLevel extends TiledMap {
 			case "enemy_start":
 				var speedX:Float = Std.parseFloat(o.custom.get("speedX")); // enemy_start objects need a property named speedX to set Enemy speed. Std.parseFloat() converts it from text to a number.
 				state.enemies.add(new L1Enemy(x, y, speedX, state));
+
+			case "platform":
+				switch (o.custom.get("platformType")) {
+					case "normal":
+						state.platforms.add(new L1Platform(x,y,width,height));
+					case "oneway":
+						state.platforms.add(new L1Oneway(x,y,width,height));
+				}
 		}
 	}
 	

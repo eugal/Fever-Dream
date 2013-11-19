@@ -9,7 +9,7 @@
    <property name="tileset" value="tilemap_test"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt0csJACAMRMGgWJGV2H8zdiDiB0TmMMfwAlsjol5WFs3e7jRekw7T0NDQ0Bg3MgAAAAAAAAAAAAAAAAAA32sP/IDNsTk2x+bYHGZ1eSJBgw==
+   eJzt08sJwCAURcFHJDWkECux/2bcuwghHyK+WcxSjnixRkT92H7T1bNPGrPZXqahoaGhcd4oAAAAAAAAAAAAAAAAAAAsr01wB2zOupsfg7/fIgv/PB+b52NzMusVb0HT
   </data>
  </layer>
  <layer name="foreground" width="25" height="200">
@@ -17,7 +17,7 @@
    <property name="tileset" value="tilemap_test"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt3LEJACAMRUFXsbFw/wHtJSARC8U7eGWq36cUAE7pQdytJtu55V32BAAAAAAAAAAAAAAAAAAAVtoUABDL/nr5uQFKkA6R
+   eJzt3DEKACEMBEB/YW3r/x/oBzSQYOFxM7CNwbVIb2sA3DI34W0jmcpdvss+AQAAAAAAAAAAAAAAAAAAAKjqwflplu3f9fRgVumPejJvZP96+XMWPJ8PDQ==
   </data>
  </layer>
  <objectgroup name="player_start" width="25" height="200">
@@ -34,6 +34,13 @@
   <object name="enemy1" type="enemy_start" x="32" y="544" width="32" height="32">
    <properties>
     <property name="speedX" value="32"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="platforms" width="25" height="200">
+  <object name="platform1" type="platform" x="448" y="5696" width="128" height="32">
+   <properties>
+    <property name="platformType" value="oneway"/>
    </properties>
   </object>
  </objectgroup>
